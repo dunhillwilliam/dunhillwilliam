@@ -1,0 +1,174 @@
+:root {
+  --bg: #fafafa;
+  --fg: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #e5e5e5;
+  --accent: #26428b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+/* Hero */
+.hero {
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.tagline {
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+a {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Sections */
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry {
+  margin-bottom: 1.5rem;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.entry-title {
+  font-weight: 600;
+}
+
+.entry-dates {
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.entry-sub {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+ul li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--fg);
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.skills li::before {
+  display: none;
+}
+
+.skills li {
+  padding-left: 0;
+  margin-bottom: 0.5rem;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
